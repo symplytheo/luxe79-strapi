@@ -59,6 +59,10 @@
     "isAvailable": {
       "type": "boolean",
       "default": true
+    },
+    "isTopSeller": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
