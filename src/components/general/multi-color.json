@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_general_multi_colors",
+  "info": {
+    "displayName": "Multi-color",
+    "icon": "chartCircle"
+  },
+  "options": {},
+  "attributes": {
+    "colorName": {
+      "type": "string",
+      "required": true
+    },
+    "colorHex": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true
+    }
+  },
+  "config": {}
+}

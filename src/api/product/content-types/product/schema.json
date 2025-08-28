@@ -63,6 +63,26 @@
     "isTopSeller": {
       "type": "boolean",
       "default": false
+    },
+    "collection": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Fourth Collection",
+      "enum": [
+        "First Collection",
+        "Second Collection",
+        "Third Collection",
+        "Fourth Collection",
+        "Fifth Collection"
+      ]
+    },
+    "sizes": {
+      "type": "string"
+    },
+    "colors": {
+      "type": "component",
+      "component": "general.multi-color",
+      "repeatable": true
     }
   }
 }
