@@ -1,61 +1,87 @@
-# 🚀 Getting started with Strapi
+# Luxe79 Backend (Strapi)
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+A Strapi-based backend API for the Luxe79 project.
 
-### `develop`
+## 🌐 Deployment
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+- **Production**: [https://stylish-paradise-12daf59170.strapiapp.com](https://stylish-paradise-12daf59170.strapiapp.com)
+- **Local Development**: [http://localhost:1337](http://localhost:1337)
+
+## 🚀 Local Development Setup
+
+### Prerequisites
+
+- Node.js (>=18.0.0 <=22.x.x)
+- npm (>=6.0.0) or yarn
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd luxe79-backdoor
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start the development server**
+
+   ```bash
+   npm run develop
+   # or
+   yarn develop
+   ```
+
+4. **Access the application**
+   - Admin Panel: [http://localhost:1337/admin](http://localhost:1337/admin)
+   - API: [http://localhost:1337/api](http://localhost:1337/api)
+
+### Available Scripts
+
+- `npm run develop` - Start development server with auto-reload
+- `npm run start` - Start production server
+- `npm run build` - Build admin panel for production
+- `npm run console` - Open Strapi console
+- `npm run deploy` - Deploy to Strapi Cloud
+
+## 🛠️ Tech Stack
+
+- **Framework**: Strapi v5.20.0
+- **Database**: SQLite (better-sqlite3)
+- **Runtime**: Node.js with TypeScript
+- **UI Framework**: React 18
+
+## � Project Structure
 
 ```
-npm run develop
-# or
-yarn develop
+├── config/          # Configuration files
+├── database/        # Database files and migrations
+├── public/          # Static files and uploads
+├── src/            # Source code
+│   ├── admin/      # Admin customizations
+│   ├── api/        # API routes and controllers
+│   └── components/ # Reusable components
+└── types/          # TypeScript type definitions
 ```
 
-### `start`
+## 🔧 Configuration
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+The application uses environment-based configuration. Key configuration files:
 
-```
-npm run start
-# or
-yarn start
-```
+- `config/database.ts` - Database configuration
+- `config/server.ts` - Server configuration
+- `config/admin.ts` - Admin panel configuration
+- `config/middlewares.ts` - Middleware configuration
 
-### `build`
+## 📚 Resources
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
-```
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+- [Strapi Documentation](https://docs.strapi.io)
+- [Strapi Cloud](https://cloud.strapi.io)
+- [API Reference](https://docs.strapi.io/dev-docs/api/rest)
