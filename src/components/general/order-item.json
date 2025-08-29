@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_general_order_items",
+  "info": {
+    "displayName": "Order Item",
+    "icon": "stack"
+  },
+  "options": {},
+  "attributes": {
+    "productId": {
+      "type": "string"
+    },
+    "productName": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "color": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

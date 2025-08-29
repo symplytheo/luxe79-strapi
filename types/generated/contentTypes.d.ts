@@ -408,6 +408,45 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
+  collectionName: 'orders';
+  info: {
+    displayName: 'Order';
+    pluralName: 'orders';
+    singularName: 'order';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    customerAddress: Schema.Attribute.String;
+    customerEmail: Schema.Attribute.String;
+    customerName: Schema.Attribute.String & Schema.Attribute.Required;
+    customerPhone: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
+      Schema.Attribute.Private;
+    orderItems: Schema.Attribute.Component<'general.order-item', true>;
+    orderStatus: Schema.Attribute.Enumeration<['PAID', 'UNPAID']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'PAID'>;
+    paymentMethod: Schema.Attribute.Enumeration<['Paystack', 'Whatsapp']> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    reference: Schema.Attribute.String & Schema.Attribute.Required;
+    shipping: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    subtotal: Schema.Attribute.Integer & Schema.Attribute.Required;
+    tax: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    totalAmount: Schema.Attribute.Integer & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -991,6 +1030,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::category.category': ApiCategoryCategory;
+      'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

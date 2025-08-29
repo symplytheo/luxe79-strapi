@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reference": {
+      "type": "string",
+      "required": true
+    },
+    "totalAmount": {
+      "type": "integer",
+      "required": true
+    },
+    "subtotal": {
+      "type": "integer",
+      "required": true
+    },
+    "shipping": {
+      "type": "integer",
+      "default": 0
+    },
+    "tax": {
+      "type": "integer",
+      "default": 0
+    },
+    "customerName": {
+      "type": "string",
+      "required": true
+    },
+    "customerEmail": {
+      "type": "string",
+      "required": false
+    },
+    "customerPhone": {
+      "type": "string",
+      "required": false
+    },
+    "customerAddress": {
+      "type": "string"
+    },
+    "orderItems": {
+      "type": "component",
+      "component": "general.order-item",
+      "repeatable": true
+    },
+    "paymentMethod": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Paystack",
+        "Whatsapp"
+      ]
+    },
+    "orderStatus": {
+      "type": "enumeration",
+      "required": true,
+      "default": "PAID",
+      "enum": [
+        "PAID",
+        "UNPAID"
+      ]
+    }
+  }
+}
