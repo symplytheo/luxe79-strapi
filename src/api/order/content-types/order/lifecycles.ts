@@ -41,7 +41,7 @@ export default {
           subject: `Order Confirmation - ${populatedOrder.reference}`,
           text: `Hi ${populatedOrder.customerName}, your order ${populatedOrder.reference} has been confirmed.`,
           message_html: getOrderConfirmationTemplate(populatedOrder),
-          from: "79luxe@gmail.com",
+          cc: "79luxe@gmail.com",
           name: "79LUXE Clothing",
         }),
       });
