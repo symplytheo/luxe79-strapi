@@ -3,11 +3,11 @@ export default ({ env }) => ({
     config: {
       provider: "nodemailer",
       providerOptions: {
-        host: "smtp.gmail.com",
-        port: 587,
+        host: env("SMTP_HOST", "smtp.gmail.com"),
+        port: env.int("SMTP_PORT", 587),
         auth: {
-          user: "mailsenderrr224@gmail.com",
-          pass: "ysbvoynyyjkdhehh",
+          user: env("SMTP_USERNAME"),
+          pass: env("SMTP_PASSWORD"),
         },
       },
       settings: {
