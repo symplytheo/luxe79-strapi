@@ -32,13 +32,14 @@ export default {
         populate: ["orderItems"],
       });
 
-      await strapi.plugins["email"].services.email.send({
+      const resp = await strapi.plugins["email"].services.email.send({
         to: populatedOrder.customerEmail,
         cc: "79luxe@gmail.com",
         subject: `Order Confirmation - ${populatedOrder.reference}`,
         text: `Hi ${populatedOrder.customerName}, your order ${populatedOrder.reference} has been confirmed.`,
         html: getOrderConfirmationTemplate(populatedOrder),
       });
+      console.log("Email service response:", resp);
       console.log(
         "Order confirmation email sent to:",
         populatedOrder.customerEmail
