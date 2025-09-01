@@ -483,6 +483,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required;
     galleryImages: Schema.Attribute.Media<'images' | 'files', true>;
     isAvailable: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    isNewArrival: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isTopSeller: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

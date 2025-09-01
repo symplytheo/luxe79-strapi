@@ -60,6 +60,10 @@
       "type": "boolean",
       "default": true
     },
+    "isNewArrival": {
+      "type": "boolean",
+      "default": false
+    },
     "isTopSeller": {
       "type": "boolean",
       "default": false
