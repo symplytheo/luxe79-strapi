@@ -279,6 +279,11 @@ export const getOrderConfirmationTemplate = (order) => {
                                     `
                                         : ""
                                     }
+                                   
+                                    <tr>
+                                        <td style="font-size: 14px; color: #6b7280; padding-bottom: 8px;">Shipping:</td>
+                                        <td style="font-size: 14px; color: #111827; text-align: right; padding-bottom: 8px;">Will be communicated</td>
+                                    </tr>
                                     ${
                                       order.tax
                                         ? `
